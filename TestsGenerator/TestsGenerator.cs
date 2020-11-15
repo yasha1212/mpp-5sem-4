@@ -34,7 +34,7 @@ namespace TestsGenerator
             foreach (var classDecl in classes)
             {
                 var methods = classDecl.DescendantNodes().OfType<MethodDeclarationSyntax>()
-                    .Where(method => !method.Modifiers.Any(modifier => modifier.Text == "private")).ToList();
+                    .Where(method => method.Modifiers.Any(modifier => modifier.Text == "public")).ToList();
 
                 if (methods.Count > 0)
                 {
